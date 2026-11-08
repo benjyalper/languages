@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Languages</title>
+  <meta name="description" content="3 new words every day in Russian, Spanish and Chinese.">
+  <meta name="theme-color" content="#5b4bff">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗣️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">🗣️ Languages</div>
+    <div class="stats">
+      <span class="pill" title="Day streak">🔥 <b id="streak">0</b></span>
+      <span class="pill" title="Words learned">📚 <b id="wordCount">0</b></span>
+      <span class="pill" title="Medals">🏅 <b id="medalCount">0</b></span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="today">Today</button>
+    <button class="tab" data-tab="learned">Learned</button>
+    <button class="tab" data-tab="medals">Medals &amp; prizes</button>
+  </nav>
+
+  <main>
+    <section id="tab-today" class="panel active">
+      <div class="lesson-head">
+        <div>
+          <h1 id="lessonTitle">Today's words</h1>
+          <p id="lessonSub" class="muted"></p>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress"><div id="progressBar"></div></div>
+          <span id="progressText" class="muted">0 / 3</span>
+        </div>
+      </div>
+      <div id="doneBanner" class="banner hidden"></div>
+      <div id="cards" class="cards"></div>
+      <p id="voiceNote" class="muted small hidden"></p>
+    </section>
+
+    <section id="tab-learned" class="panel">
+      <div class="learned-head">
+        <h1>What we've learned</h1>
+        <input id="search" type="search" placeholder="Search a word…" aria-label="Search learned words">
+      </div>
+      <div id="learnedList"></div>
+    </section>
+
+    <section id="tab-medals" class="panel">
+      <h1>Medals</h1>
+      <div class="statgrid" id="statGrid"></div>
+      <div id="medalGrid" class="medal-grid"></div>
+      <h1>Prizes: unlockable themes</h1>
+      <p class="muted">Keep your streak going to unlock new looks. Tap an unlocked theme to use it.</p>
+      <div id="themeGrid" class="theme-grid"></div>
+      <details class="danger">
+        <summary>Reset progress</summary>
+        <p class="muted small">Progress is saved in this browser only.</p>
+        <button id="resetBtn" class="btn ghost">Erase all progress</button>
+      </details>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div id="modalBig" class="modal-big">🎉</div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+      <div id="modalMedals" class="modal-medals"></div>
+      <button id="modalClose" class="btn">Yay!</button>
+    </div>
+  </div>
+  <canvas id="confetti"></canvas>
+
+  <script src="words.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
