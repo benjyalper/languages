@@ -188,7 +188,7 @@
         ${LANGS.map(l => langRow(w, l, `t${k}`, false)).join('')}
         <div class="card-actions">
           <button class="btn ghost" data-sayall="${k}" aria-label="Play all three">▶ All</button>
-          <button class="check ${checks[k] ? 'on' : ''}" data-check="${k}" ${finished ? 'disabled' : ''}>${checks[k] ? '✔ Learned' : 'V  Mark learned'}</button>
+          <button class="check ${checks[k] ? 'on' : ''}" data-check="${k}" ${finished ? 'disabled' : ''}>${checks[k] ? '✅ Got it!' : 'Got it!'}</button>
         </div>
       </article>`).join('');
   }
